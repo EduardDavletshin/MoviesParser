@@ -1,6 +1,5 @@
 package com.example.eddy.moviesparser;
 
-import android.content.Context;
 import android.content.res.Resources;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
