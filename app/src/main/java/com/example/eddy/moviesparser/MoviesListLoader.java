@@ -11,12 +11,12 @@ import java.util.ArrayList;
  * Created by eddy on 1/9/2017.
  */
 
-class JSONLoader extends AsyncTask {
+class MoviesListLoader extends AsyncTask {
 
     private ArrayList<Movie> movies;
     private Callback callback;
 
-    JSONLoader(Callback callback) {
+    MoviesListLoader(Callback callback) {
         this.callback = callback;
     }
 

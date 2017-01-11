@@ -1,13 +1,14 @@
 package com.example.eddy.moviesparser;
 
-        import retrofit2.Retrofit;
-        import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by eddy on 1/5/2017.
  */
-class RetrofitSingleton {
+public class RetrofitSingleton {
 
+    private static RetrofitSingleton instance = new RetrofitSingleton();
     private RequestInterface requestInterface;
 
     private RetrofitSingleton() {
@@ -19,13 +20,11 @@ class RetrofitSingleton {
         requestInterface = retrofit.create(RequestInterface.class);
     }
 
-    RequestInterface getRequestInterface() {
-        return requestInterface;
+    public static RetrofitSingleton getInstance() {
+        return instance;
     }
 
-    private static RetrofitSingleton instance = new RetrofitSingleton();
-
-    static RetrofitSingleton getInstance() {
-        return instance;
+    public RequestInterface getRequestInterface() {
+        return requestInterface;
     }
 }

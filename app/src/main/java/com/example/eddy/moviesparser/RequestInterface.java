@@ -9,7 +9,7 @@ import retrofit2.http.GET;
  * Created by eddy on 1/4/2017.
  */
 
-interface RequestInterface {
+public interface RequestInterface {
 
     @GET("moviesData.txt")
     Call<Movies> loadMovies();

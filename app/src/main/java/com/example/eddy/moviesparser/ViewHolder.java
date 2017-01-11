@@ -1,5 +1,6 @@
 package com.example.eddy.moviesparser;
 
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -31,6 +32,8 @@ public class ViewHolder extends RecyclerView.ViewHolder{
     ImageView imageMovie;
     @BindView(R.id.text_story)
     TextView story;
+    @BindView(R.id.card_view)
+    CardView cardView;
 
     public ViewHolder(View itemView) {
         super(itemView);

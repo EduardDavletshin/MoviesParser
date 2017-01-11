@@ -13,6 +13,21 @@ public class Movies implements Parcelable {
 
     private ArrayList<Movie> movies;
 
+
+    private Movies(Parcel in) {
+        movies = in.createTypedArrayList(Movie.CREATOR);
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeTypedList(movies);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
     public static final Creator<Movies> CREATOR = new Creator<Movies>() {
         @Override
         public Movies createFromParcel(Parcel in) {
@@ -25,10 +40,6 @@ public class Movies implements Parcelable {
         }
     };
 
-    private Movies(Parcel in) {
-        movies = in.createTypedArrayList(Movie.CREATOR);
-    }
-
     public ArrayList<Movie> getMovies() {
         return movies;
     }
@@ -36,14 +47,5 @@ public class Movies implements Parcelable {
     public void setMovies(ArrayList<Movie> movies) {
         this.movies = movies;
     }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeTypedList(movies);
-    }
 }
+

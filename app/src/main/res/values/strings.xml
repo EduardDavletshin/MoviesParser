@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">MoviesParser</string>
-    <string name="year">"Year: "</string>
-    <string name="rating">"Rating: "</string>
-    <string name="duration">"Duration: "</string>
-    <string name="director">"Director: "</string>
+    <string name="year">"Year: %s"</string>
+    <string name="rating">"Rating: %s"</string>
+    <string name="duration">"Duration: %s"</string>
+    <string name="director">"Director: %s"</string>
     <string name="cast">"Cast: "</string>
-    <string name="story">"Story: "</string>
+    <string name="story">"Story: %s"</string>
 </resources>

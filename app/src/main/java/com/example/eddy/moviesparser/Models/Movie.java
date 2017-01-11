@@ -21,6 +21,19 @@ public class Movie implements Parcelable {
     private String image;
     private String story;
 
+
+    protected Movie(Parcel in) {
+        movie = in.readString();
+        year = in.readInt();
+        rating = in.readFloat();
+        duration = in.readString();
+        director = in.readString();
+        tagline = in.readString();
+        cast = in.createTypedArrayList(Cast.CREATOR);
+        image = in.readString();
+        story = in.readString();
+    }
+
     public static final Creator<Movie> CREATOR = new Creator<Movie>() {
         @Override
         public Movie createFromParcel(Parcel in) {
@@ -32,18 +45,6 @@ public class Movie implements Parcelable {
             return new Movie[size];
         }
     };
-
-    private Movie(Parcel in) {
-        movie = in.readString();
-        year = in.readInt();
-        rating = in.readFloat();
-        duration = in.readString();
-        director = in.readString();
-        tagline = in.readString();
-        cast = in.readParcelable(Cast.class.getClassLoader());
-        image = in.readString();
-        story = in.readString();
-    }
 
     public String getMovie() {
         return movie;
@@ -124,8 +125,17 @@ public class Movie implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-
+        dest.writeString(movie);
+        dest.writeInt(year);
+        dest.writeFloat(rating);
+        dest.writeString(duration);
+        dest.writeString(director);
+        dest.writeString(tagline);
+        dest.writeTypedList(cast);
+        dest.writeString(image);
+        dest.writeString(story);
     }
+
 }
 
 

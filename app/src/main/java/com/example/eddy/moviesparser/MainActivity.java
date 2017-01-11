@@ -18,11 +18,11 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
     ArrayList<Movie> moviesArrayList;
-    JSONLoader jsonLoader;
+    MoviesListLoader jsonLoader;
 
     @OnClick(R.id.button_movies)
     public void loadJSON() {
-        jsonLoader = new JSONLoader(new Callback() {
+        jsonLoader = new MoviesListLoader(new Callback() {
             @Override
             public void onFinish(ArrayList<Movie> movies) {
                 moviesArrayList = movies;
