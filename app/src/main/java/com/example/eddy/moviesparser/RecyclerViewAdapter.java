@@ -48,11 +48,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder> {
 
         StringBuilder builder = new StringBuilder();
         builder.append(res.getString(R.string.cast));
-        for (int i = 0; i < dataPosition.getCast().size(); i++) {
-            if (i != dataPosition.getCast().size() - 1) {
-                builder.append(dataPosition.getCast().get(i).getName()).append(", ");
-            } else builder.append((dataPosition.getCast().get(i).getName()));
+        for (int i = 0; i < dataPosition.getCast().size() - 1; i++) {
+            builder.append(dataPosition.getCast().get(i).getName()).append(", ");
         }
+        builder.append((dataPosition.getCast().get(dataPosition.getCast().size()).getName()));
         holder.cast.setText(builder);
 
         Picasso.with(holder.imageMovie.getContext()).load(dataPosition.getImage())

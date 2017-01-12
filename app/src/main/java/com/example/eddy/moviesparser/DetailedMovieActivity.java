@@ -52,11 +52,10 @@ public class DetailedMovieActivity extends AppCompatActivity {
 
             StringBuilder builder = new StringBuilder();
             builder.append(getString(R.string.cast));
-            for (int i = 0; i < moviewItem.getCast().size(); i++) {
-                if (i != moviewItem.getCast().size() - 1) {
-                    builder.append(moviewItem.getCast().get(i).getName()).append(", ");
-                } else builder.append((moviewItem.getCast().get(i).getName()));
+            for (int i = 0; i < moviewItem.getCast().size() - 1; i++) {
+                builder.append(moviewItem.getCast().get(i).getName()).append(", ");
             }
+            builder.append((moviewItem.getCast().get(moviewItem.getCast().size()).getName()));
             cast.setText(builder);
 
             Picasso.with(imageMovie.getContext()).load(moviewItem.getImage()).placeholder(R.drawable
